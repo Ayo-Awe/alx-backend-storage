@@ -4,7 +4,7 @@
 delimiter //
 CREATE PROCEDURE ComputeAverageScoreForUser (IN user_id INT)
 BEGIN
-	DECLARE average INT DEFAULT 0;
+	DECLARE average FLOAT DEFAULT 0;
 
 	SELECT AVG(score) INTO average FROM corrections WHERE corrections.user_id = user_id;
 
