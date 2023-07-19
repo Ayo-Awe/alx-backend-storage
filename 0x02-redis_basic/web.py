@@ -23,7 +23,7 @@ def get_page(url: str) -> str:
     if data is None:
         response = requests.get(url)
         data = response.content
-        _redis.setex(url, 10, data)
+        _redis.set(url, data, ex=10)
 
     # Update number of calls
     _redis.incr("count:{}".format(url))
