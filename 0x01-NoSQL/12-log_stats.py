@@ -47,5 +47,4 @@ def format_method_aggregates(aggregates):
     return res
 
 
-if __name__ == "__main__":
-    main()
+main()
